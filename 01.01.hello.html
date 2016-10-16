@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>hello React</title>
+    <title>style {}</title>
     <meta charset="utf-8">
   </head>
   <body>
@@ -12,8 +12,62 @@
     <script src="react/build/react-dom.js"></script>
     <script>
       ReactDOM.render(
-        React.DOM.h1(null, "Hello world!"),
-        document.getElementById("app")
+        /*
+        // COUNTEREXAMPLE
+        // this doesn't work
+        React.DOM.h1(
+          {
+            style: "background: black; color: white; font-family: Verdana",
+          },
+          "Hello world!"
+        ),
+        */
+        
+        // PROPER EXAMPLE
+        // this works
+        React.DOM.h1(
+          {
+            style: {
+              background: "black",
+              color: "white",
+              fontFamily: "Verdana",
+            }
+          },
+          "Hello world!"
+        ),      
+        
+        document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help<!DOCTYPE html>
+<html>
+  <head>
+    <title>hello React</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <div id="app">
+      <!-- my app renders here -->
+    </div>
+    <script src="react/build/react.js"></script>
+    <script src="react/build/react-dom.js"></script>
+    <script>
+      ReactDom.render(
+      React.Dom.h1(
+	{
+        style: {
+        background: "black",
+	color: "white",
+	fontFamily: "Verdana",
+         }
+	},
+   	"Hello World!"
+       ),
+
+      document.getElementByID('app')
       );
     </script>
   </body>
